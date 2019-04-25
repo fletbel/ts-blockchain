@@ -37,6 +37,7 @@ class Block {
   }
 }
 
+//deprecated getter
 const getBlackchain = (): Block[] => blockchain;
 const getLatestBlock = (): Block => blockchain[blockchain.length - 1];
 const getNewTimestamp = (): number => Math.round(new Date().getTime() / 1000);
@@ -65,6 +66,7 @@ const createNewBlock = (data: string): Block => {
     newTimestamp,
     data
   );
+
   const newBlock: Block = new Block(
     newIndex,
     newHash,
@@ -72,6 +74,7 @@ const createNewBlock = (data: string): Block => {
     data,
     newTimestamp
   );
+
   addBlock(newBlock);
   return newBlock;
 };
